@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
+    <ServerGarbageCollection>True</ServerGarbageCollection>
+    <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+    <TargetLatestRuntimePatch>False</TargetLatestRuntimePatch>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="PackageRoot\Code\dummy.js" />
+    <None Remove="PackageRoot\Code\node.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="PackageRoot\Code\dummy.js" />
+    <Content Include="PackageRoot\Code\node.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="3.3.622" />
+  </ItemGroup>
+
+</Project>
